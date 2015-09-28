@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/raygomez/playing-with-nodejs#readme",
   "dependencies": {
+    "cookie-parser": "^1.4.0",
     "express": "^4.13.3",
     "morgan": "^1.6.1"
   }
