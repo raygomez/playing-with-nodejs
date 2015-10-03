@@ -8,7 +8,7 @@ module.exports = function(app) {
 		var newUser = new User();
 		newUser.local.username = req.params.username;
 		newUser.local.password = req.params.password;
-		console.log(newUser.username + ' ' + newUser.password);
+		console.log(newUser.local.username + ' ' + newUser.local.password);
 		newUser.save(function(err) {
 			if(err)
 				throw err;
