@@ -1,6 +1,7 @@
 var express = require('express')
 var app = express();
 var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080;
+var ip = process.env.OPENSHIFT_NODEJS_IP || "0.0.0.0"
 
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
@@ -26,5 +27,5 @@ app.use('/', function (req, res){
 	console.log(req.session);
 });
 
-app.listen(port);
-console.log('Server listening on port:', port);
+app.listen(port, ip);
+console.log('Server listening on %s:%s', ip, port);
