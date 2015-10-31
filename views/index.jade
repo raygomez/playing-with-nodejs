@@ -4,3 +4,9 @@ block content
   h1= title
   p Welcome to #{title}
   p Data #{data}
+  ul
+    each rnc in data['rncs']
+      li= rnc['name']
+      ul
+        each bts in rnc['btss']
+          li= bts['name']

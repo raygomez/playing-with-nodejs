@@ -1,0 +1,22 @@
+{
+  "name": "playing-with-nodejs",
+  "description": "Me playing around with nodejs",
+  "main": "app.js",
+  "authors": [
+    "Ray Gomez <rayvincent.gomez@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/raygomez/playing-with-nodejs",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5"
+  }
+}
