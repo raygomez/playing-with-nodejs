@@ -4,7 +4,7 @@
   "description": "Me playing around with nodejs",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node ./bin/www"
   },
   "repository": {
     "type": "git",
@@ -17,10 +17,14 @@
   },
   "homepage": "https://github.com/raygomez/playing-with-nodejs#readme",
   "dependencies": {
+    "body-parser": "~1.13.2",
     "cookie-parser": "^1.4.0",
     "express": "^4.13.3",
     "express-session": "^1.11.3",
     "mongoose": "^4.1.8",
-    "morgan": "^1.6.1"
+    "morgan": "^1.6.1",
+    "debug": "~2.2.0",
+    "jade": "~1.11.0",
+    "serve-favicon": "~2.3.0"
   }
 }
