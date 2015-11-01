@@ -12,10 +12,22 @@ block extraHeader
         'core' : {
           'data' : data,
           'themes' : {
-            'icons' : false
+            'icons' : false,
+            'dots' : false
           }
         },
-        'plugins' : ['checkbox']
+        'plugins' : ['checkbox', 'search'],
+        'search' : {
+          'show_only_matches' : true
+        }
+      });
+
+      $('.search').keyup(function(){
+        if(typeof to != 'undefined') { clearTimeout(to);}
+        to = setTimeout(function() {
+          var v = $('.search').val();
+          $('#container').jstree(true).search(v);
+        })
       });
     });
 
@@ -23,4 +35,5 @@ block content
   h1= title
   p Welcome to #{title}
   .container
+    input.form-control.search(type="text")
     #container
