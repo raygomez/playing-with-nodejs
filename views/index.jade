@@ -7,36 +7,12 @@ block extraHeader
 
   script.
     $(function() {
-      $('#container').jstree({
-        'core' : {
-          'data' : [
-            { "text" : "Root node",
-              "children" : [
-                { "text" : "Child node 1" },
-                { "text" : "Child node 2" }
-              ]
-            }
-          ]
-        }
-      });
+      var data = !{data};
+      $('#container').jstree(data);
     });
 
 block content
   h1= title
   p Welcome to #{title}
-  p Data:
   .container
-    ul
-      each rnc in data['rncs']
-        li= rnc['name']
-        ul
-          each bts in rnc['btss']
-            li= bts['name']
-
-      div
-        each rnc in data['rncs']
-          .checkbox
-            label #{rnc['name']}
-            input(type="checkbox")
-
     #container
