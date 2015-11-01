@@ -4,13 +4,11 @@ var request = require('request-json');
 
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', function(req, res) {
 
   var client = request.createClient('http://localhost:8080');
   client.get('api/', function(e, r, body) {
-    var data = {};
-    data['core'] = {}
-    data['core']['data'] = [];
+    data = [];
 
     var rncs = body['rncs'];
 
@@ -28,9 +26,8 @@ router.get('/', function(req, res, next) {
       }
 
       node['children'] = children;
-      data['core']['data'].push(node);
+      data.push(node);
     }
-    var str = JSON.stringify(data);
     res.render('index', { title: 'Express', data: JSON.stringify(data)});
 
   });
