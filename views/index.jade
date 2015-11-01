@@ -1,5 +1,22 @@
 extends layout
 
+block extraHeader
+  script.
+    $(function() {
+      $('#container').jstree({
+        'core' : {
+          'data' : [
+            { "text" : "Root node",
+              "children" : [
+                { "text" : "Child node 1" },
+                { "text" : "Child node 2" }
+              ]
+            }
+          ]
+        }
+      });
+    });
+
 block content
   h1= title
   p Welcome to #{title}
@@ -17,3 +34,5 @@ block content
           .checkbox
             label #{rnc['name']}
             input(type="checkbox")
+
+    #container
