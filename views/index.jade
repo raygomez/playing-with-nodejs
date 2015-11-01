@@ -3,10 +3,17 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
-  p Data #{data}
-  ul
-    each rnc in data['rncs']
-      li= rnc['name']
-      ul
-        each bts in rnc['btss']
-          li= bts['name']
+  p Data:
+  .container
+    ul
+      each rnc in data['rncs']
+        li= rnc['name']
+        ul
+          each bts in rnc['btss']
+            li= bts['name']
+
+      div
+        each rnc in data['rncs']
+          .checkbox
+            label #{rnc['name']}
+            input(type="checkbox")
