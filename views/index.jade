@@ -1,6 +1,10 @@
 extends layout
 
 block extraHeader
+  script(type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js")
+  link(rel="stylesheet" href="/bower_components/jstree/dist/themes/default/style.min.css")
+  script(type="text/javascript" src="/bower_components/jstree/dist/jstree.min.js")
+
   script.
     $(function() {
       $('#container').jstree({
